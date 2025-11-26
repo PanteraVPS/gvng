@@ -244,10 +244,10 @@ connectDB().then(() => {
   app.use('/api/admin-products', adminProductsRoutes);
   if ((process.env.NODE_ENV || 'development') !== 'production') {
     app.use('/api/dev', devRoutes);
-app.use('/api/settings', settingsRoutes);
-app.use('/api/users', userRoutes);
-app.use('/api/admin', adminRoutes);
   }
+  app.use('/api/settings', settingsRoutes);
+  app.use('/api/users', userRoutes);
+  app.use('/api/admin', adminRoutes);
 
   // Serve Frontend in Production
   if (process.env.NODE_ENV === 'production') {
