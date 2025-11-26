@@ -14,6 +14,14 @@ const ProfilePage = () => {
     const [isHovering, setIsHovering] = useState(false);
     const navigate = useNavigate();
 
+    const resolveImageUrl = (url?: string) => {
+        if (!url) return ''
+        if (url.startsWith('http://') || url.startsWith('https://') || url.startsWith('data:')) return url
+        const API_BASE = import.meta.env.PROD ? '' : 'http://localhost:5000';
+        if (url.startsWith('/uploads/')) return `${API_BASE}${url}`
+        return url
+    }
+
     useEffect(() => {
         const fetchSettings = async () => {
             try {
