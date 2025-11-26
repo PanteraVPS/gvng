@@ -14,12 +14,7 @@ interface AdminEditing extends Omit<Product, 'createdAt' | 'isFeatured'> {
 
 export default function AdminPanel() {
   const getApiBase = () => {
-    const envBase = (import.meta as any)?.env?.VITE_API_BASE as string | undefined;
-    if (envBase) return envBase.replace(/\/$/, '');
-    if (typeof window !== 'undefined') {
-      const { protocol, hostname } = window.location;
-      return `${protocol}//${hostname}:5000`;
-    }
+    if (import.meta.env.PROD) return '';
     return 'http://localhost:5000';
   };
   const API_BASE = getApiBase();
@@ -117,9 +112,7 @@ export default function AdminPanel() {
     } catch {}
   };
   // Removed localStorage import/export to ensure DB is the only source of truth
-  const API_BASE = import.meta.env.PROD ? '' : 'http://localhost:5000';
-  const API_BASE = getApiBase();
-  const getApiBase = () => import.meta.env.PROD ? '' : 'http://localhost:5000';
+  
   
   const resolveImageUrl = (url?: string) => {
     if (!url) return ''
