@@ -132,6 +132,9 @@ function App() {
                 {t('cart')}
                 {cartCount > 0 && <span className="cart-badge">{cartCount}</span>}
               </Link>
+              {user && user.role === 'admin' && (
+                <Link to="/admin" className="nav-link admin-link">Admin</Link>
+              )}
             </div>
 
             {/* LANGUAGE SWITCHER REMOVED */}
