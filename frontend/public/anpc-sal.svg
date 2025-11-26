@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="32" viewBox="0 0 96 32" role="img" aria-label="ANPC">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#111"/>
+      <stop offset="100%" stop-color="#1c1c1c"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="96" height="32" rx="6" fill="url(#g)" stroke="#333"/>
+  <g transform="translate(8,7)" fill="#E6FF00">
+    <path d="M6 0a1 1 0 0 0-1 1v2H3a2 2 0 0 0-2 2v2.05C-.73 7.5-2 9.07-2 11c0 2.21 1.79 4 4 4s4-1.79 4-4c0-1.93-1.27-3.5-3-3.95V5a1 1 0 0 1 1-1h2v7.05C4.27 11.5 3 13.07 3 15h9c0-1.93-1.27-3.5-3-3.95V4h2a1 1 0 0 1 1 1v2.05c-1.73.45-3 2.02-3 3.95 0 2.21 1.79 4 4 4s4-1.79 4-4c0-1.93-1.27-3.5-3-3.95V5a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-1-1H6Z"/>
+  </g>
+  <text x="40" y="21" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="12" font-weight="700" fill="#E6FF00" letter-spacing="1">ANPC</text>
+</svg>

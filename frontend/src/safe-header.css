@@ -1,0 +1,87 @@
+:root {
+  --header-lime: #A8FF00; /* balanced lime */
+  --header-text: #ffffff;
+}
+
+/* Minimal, non-destructive header improvements */
+header, .site-header, .navbar {
+  position: relative;
+  z-index: 1000;
+}
+/* Common nav link/button selectors used in the project */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.nav-link,
+.nav-button,
+header a,
+.site-header a,
+.navbar a,
+button.nav-button,
+.cart-link {
+  color: var(--header-lime);
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.04);
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  transition: color .15s ease, background .15s ease, transform .12s ease;
+  display: inline-block;
+}
+
+.nav-button {
+  background: rgba(255,255,255,0.02);
+}
+
+.nav-link:hover,
+.nav-button:hover,
+.nav-link:focus,
+.nav-button:focus {
+  color: var(--header-text);
+  background: linear-gradient(90deg, rgba(168,255,0,0.10), rgba(168,255,0,0.03));
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+
+/* Ensure mobile menu toggle is readable */
+.menu-toggle,
+.burger,
+.header-toggle {
+  color: var(--header-lime);
+  background: rgba(255,255,255,0.03);
+  border-radius: 6px;
+  padding: 6px;
+}
+
+/* Accessibility: visible focus outlines */
+.nav-link:focus-visible,
+header a:focus-visible {
+  outline: 2px solid rgba(255,255,255,0.9);
+  outline-offset: 2px;
+}
+
+/* Cart badge visibility */
+.cart-badge {
+  display: inline-block;
+  background: var(--header-lime);
+  color: #000;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 12px;
+  margin-left: 8px;
+  font-size: 12px;
+}
+
+/* Defensive: ensure nav links are not hidden by accidental styles */
+header .nav-link[style*="display:none"],
+header .nav-link[style*="opacity:0"],
+header .nav-link[style*="visibility:hidden"] {
+  display: inline-block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}

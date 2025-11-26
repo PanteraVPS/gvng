@@ -30,7 +30,7 @@ const getImageUrl = (imagePath: string) => {
     return "https://via.placeholder.com/64";
   }
   if (imagePath.startsWith('/uploads')) {
-    return `http://localhost:5000${imagePath}`;
+    return `${import.meta.env.PROD ? '' : 'http://localhost:5000'}${imagePath}`;
   }
   if (imagePath.startsWith('http')) {
     return imagePath;

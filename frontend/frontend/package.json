@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "react-auth-kit": "^4.0.2-alpha.11"
+  }
+}

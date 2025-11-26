@@ -1,0 +1,94 @@
+:root {
+  --accent-lime: #A8FF00; /* balanced default */
+  --accent-lime-subtle: #DDFB9A;
+  --accent-lime-saturated: #39FF14;
+}
+
+/* Ensure header sits above overlays and is visible */
+header,
+.site-header,
+.navbar {
+  position: relative;
+  z-index: 11000 !important;
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  mix-blend-mode: normal !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+
+.admin-panel {
+  position: relative;
+  z-index: 10000 !important;
+}
+
+.nav-link,
+header a,
+.site-header a,
+.navbar a {
+  color: var(--accent-lime) !important;
+  text-decoration: none;
+  transition: color 160ms ease, text-shadow 160ms ease;
+  -webkit-text-fill-color: initial;
+}
+
+.nav-link:hover,
+.nav-link:focus,
+header a:hover,
+header a:focus,
+.site-header a:hover,
+.site-header a:focus,
+.navbar a:hover,
+.navbar a:focus {
+  color: #ffffff !important;
+  text-shadow: 0 0 8px var(--accent-lime), 0 0 18px rgba(0,0,0,0.12);
+  background: linear-gradient(90deg, rgba(0,0,0,0.05), rgba(0,0,0,0));
+}
+
+/* Thin neon-lime top accent line */
+header::before,
+.site-header::before,
+.navbar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  pointer-events: none;
+  z-index: 11001;
+  background: linear-gradient(90deg, var(--accent-lime-subtle), var(--accent-lime), var(--accent-lime-saturated));
+  box-shadow: 0 0 10px var(--accent-lime), 0 0 20px rgba(0,0,0,0.06) inset;
+}
+
+/* Defensive: ensure hidden/transparent utilities don't hide header links */
+header .nav-link[style*="display:none"],
+.site-header .nav-link[style*="display:none"],
+header .nav-link[style*="opacity:0"],
+.site-header .nav-link[style*="opacity:0"],
+header .nav-link[style*="visibility:hidden"],
+.site-header .nav-link[style*="visibility:hidden"] {
+  display: inline-block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+.nav-link:focus-visible,
+header a:focus-visible {
+  outline: 2px solid rgba(255,255,255,0.9);
+  outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+  header,
+  .site-header {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  header::before,
+  .site-header::before {
+    height: 4px;
+  }
+}
