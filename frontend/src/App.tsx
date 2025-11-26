@@ -132,9 +132,7 @@ function App() {
                 {t('cart')}
                 {cartCount > 0 && <span className="cart-badge">{cartCount}</span>}
               </Link>
-              {user && user.role === 'admin' && (
-                <Link to="/admin" className="nav-link admin-link">Admin</Link>
-              )}
+
             </div>
 
             {/* LANGUAGE SWITCHER REMOVED */}
@@ -266,30 +264,32 @@ function App() {
         </footer>
 
         {/* Floating admin gear */}
-        <Link
-          to="/admin"
-          title="Admin"
-          aria-label="Admin"
-          style={{
-            position: 'fixed',
-            right: 20,
-            bottom: 20,
-            width: 54,
-            height: 54,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            background: 'rgba(27,27,27,0.92)',
-            color: '#CFFF04',
-            border: '2px solid #333',
-            borderRadius: '50%',
-            boxShadow: '0 0 16px 2px #CFFF0480, 0 6px 18px rgba(0,0,0,0.35)',
-            zIndex: 3000,
-            cursor: 'pointer',
-          }}
-        >
-          ⚙️
-        </Link>
+        {user && user.role === 'admin' && (
+          <Link
+            to="/admin"
+            title="Admin"
+            aria-label="Admin"
+            style={{
+              position: 'fixed',
+              right: 20,
+              bottom: 20,
+              width: 54,
+              height: 54,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              background: 'rgba(27,27,27,0.92)',
+              color: '#CFFF04',
+              border: '2px solid #333',
+              borderRadius: '50%',
+              boxShadow: '0 0 16px 2px #CFFF0480, 0 6px 18px rgba(0,0,0,0.35)',
+              zIndex: 3000,
+              cursor: 'pointer',
+            }}
+          >
+            ⚙️
+          </Link>
+        )}
 
       </div>
     </Router>
