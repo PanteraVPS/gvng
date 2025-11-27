@@ -345,7 +345,7 @@ MIT
 
 ## 👤 Author
 
-Created with ❤️ for e-commerce development
+Created with ❤️ by me for e-commerce development
 
 ## 🤝 Contributing
 
